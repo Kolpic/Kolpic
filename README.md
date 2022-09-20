@@ -1,7 +1,5 @@
 <h1 align="center">Hi 👋, I'm Galin Petrov</h1>
 <h3 align="center">A passionate student from Bulgaria</h3>
-//<img align="right" alt="Coding" width="200" src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif">
-
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=kolpic&label=Profile%20views&color=0e75b6&style=flat" alt="kolpic" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=kolpic" alt="kolpic" /></a> </p>
