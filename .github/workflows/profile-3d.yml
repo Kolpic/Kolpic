@@ -15,64 +15,60 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Current year — saved as profile-night-rainbow.svg (default name, used in README)
+      # --- Current year (2026) ---
       - name: Generate current year
-        uses: yoshi389111/github-profile-3d-contrib@latest
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+      # profile-night-rainbow.svg is now in profile-3d-contrib/
 
-      # 2025
-      - name: Write settings for 2025
-        run: |
-          echo '[{"type":"rainbow","fileName":"profile-3d-contrib/profile-2025-night-rainbow.svg","backgroundColor":"#00000f","foregroundColor":"#eeeeff","strongColor":"rgb(255,200,55)","weakColor":"#aaaaaa","radarColor":"rgb(255,200,55)","growingAnimation":true}]' > /tmp/settings-2025.json
-
+      # --- 2025 ---
       - name: Generate 2025
-        uses: yoshi389111/github-profile-3d-contrib@latest
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
           YEAR: 2025
-          SETTING_JSON: /tmp/settings-2025.json
+      - name: Rename 2025
+        run: mv profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-2025-night-rainbow.svg
 
-      # 2024
-      - name: Write settings for 2024
-        run: |
-          echo '[{"type":"rainbow","fileName":"profile-3d-contrib/profile-2024-night-rainbow.svg","backgroundColor":"#00000f","foregroundColor":"#eeeeff","strongColor":"rgb(255,200,55)","weakColor":"#aaaaaa","radarColor":"rgb(255,200,55)","growingAnimation":true}]' > /tmp/settings-2024.json
-
+      # --- 2024 ---
       - name: Generate 2024
-        uses: yoshi389111/github-profile-3d-contrib@latest
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
           YEAR: 2024
-          SETTING_JSON: /tmp/settings-2024.json
+      - name: Rename 2024
+        run: mv profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-2024-night-rainbow.svg
 
-      # 2023
-      - name: Write settings for 2023
-        run: |
-          echo '[{"type":"rainbow","fileName":"profile-3d-contrib/profile-2023-night-rainbow.svg","backgroundColor":"#00000f","foregroundColor":"#eeeeff","strongColor":"rgb(255,200,55)","weakColor":"#aaaaaa","radarColor":"rgb(255,200,55)","growingAnimation":true}]' > /tmp/settings-2023.json
-
+      # --- 2023 ---
       - name: Generate 2023
-        uses: yoshi389111/github-profile-3d-contrib@latest
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
           YEAR: 2023
-          SETTING_JSON: /tmp/settings-2023.json
+      - name: Rename 2023
+        run: mv profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-2023-night-rainbow.svg
 
-      # 2022
-      - name: Write settings for 2022
-        run: |
-          echo '[{"type":"rainbow","fileName":"profile-3d-contrib/profile-2022-night-rainbow.svg","backgroundColor":"#00000f","foregroundColor":"#eeeeff","strongColor":"rgb(255,200,55)","weakColor":"#aaaaaa","radarColor":"rgb(255,200,55)","growingAnimation":true}]' > /tmp/settings-2022.json
-
+      # --- 2022 ---
       - name: Generate 2022
-        uses: yoshi389111/github-profile-3d-contrib@latest
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
           YEAR: 2022
-          SETTING_JSON: /tmp/settings-2022.json
+      - name: Rename 2022
+        run: mv profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-2022-night-rainbow.svg
+
+      # Restore current year (overwritten by 2022 run above)
+      - name: Restore current year
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
 
       - name: Commit & Push
         run: |
