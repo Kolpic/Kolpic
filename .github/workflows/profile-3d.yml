@@ -11,69 +11,23 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: generate-github-profile-3d-contrib
     steps:
       - uses: actions/checkout@v4
 
-      # --- Current year (2026) ---
-      - name: Generate current year
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-      # profile-night-rainbow.svg is now in profile-3d-contrib/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-      # --- 2025 ---
-      - name: Generate 2025
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+      - name: Generate all-time 3D contribution graph
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2025
-      - name: Rename 2025
-        run: mv profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-2025-night-rainbow.svg
-
-      # --- 2024 ---
-      - name: Generate 2024
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2024
-      - name: Rename 2024
-        run: mv profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-2024-night-rainbow.svg
-
-      # --- 2023 ---
-      - name: Generate 2023
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2023
-      - name: Rename 2023
-        run: mv profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-2023-night-rainbow.svg
-
-      # --- 2022 ---
-      - name: Generate 2022
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2022
-      - name: Rename 2022
-        run: mv profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-2022-night-rainbow.svg
-
-      # Restore current year (overwritten by 2022 run above)
-      - name: Restore current year
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
+        run: |
+          node scripts/generate-3d-contrib.mjs kolpic "$GITHUB_TOKEN" 2022 $(date +%Y)
 
       - name: Commit & Push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add -A .
-          git diff --staged --quiet || git commit -m "Generate 3D contribution graphs (all years)"
+          git add profile-3d-contrib/profile-alltime.svg
+          git diff --staged --quiet || git commit -m "Update all-time 3D contribution graph"
           git push
