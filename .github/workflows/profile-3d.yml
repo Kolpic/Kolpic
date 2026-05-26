@@ -5,20 +5,79 @@ on:
     - cron: "0 18 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
     steps:
-      - uses: actions/checkout@v3
-      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
+      - uses: actions/checkout@v4
+
+      # Current year — saved as profile-night-rainbow.svg (default name, used in README)
+      - name: Generate current year
+        uses: yoshi389111/github-profile-3d-contrib@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+
+      # 2025
+      - name: Write settings for 2025
+        run: |
+          echo '[{"type":"rainbow","fileName":"profile-3d-contrib/profile-2025-night-rainbow.svg","backgroundColor":"#00000f","foregroundColor":"#eeeeff","strongColor":"rgb(255,200,55)","weakColor":"#aaaaaa","radarColor":"rgb(255,200,55)","growingAnimation":true}]' > /tmp/settings-2025.json
+
+      - name: Generate 2025
+        uses: yoshi389111/github-profile-3d-contrib@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2025
+          SETTING_JSON: /tmp/settings-2025.json
+
+      # 2024
+      - name: Write settings for 2024
+        run: |
+          echo '[{"type":"rainbow","fileName":"profile-3d-contrib/profile-2024-night-rainbow.svg","backgroundColor":"#00000f","foregroundColor":"#eeeeff","strongColor":"rgb(255,200,55)","weakColor":"#aaaaaa","radarColor":"rgb(255,200,55)","growingAnimation":true}]' > /tmp/settings-2024.json
+
+      - name: Generate 2024
+        uses: yoshi389111/github-profile-3d-contrib@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2024
+          SETTING_JSON: /tmp/settings-2024.json
+
+      # 2023
+      - name: Write settings for 2023
+        run: |
+          echo '[{"type":"rainbow","fileName":"profile-3d-contrib/profile-2023-night-rainbow.svg","backgroundColor":"#00000f","foregroundColor":"#eeeeff","strongColor":"rgb(255,200,55)","weakColor":"#aaaaaa","radarColor":"rgb(255,200,55)","growingAnimation":true}]' > /tmp/settings-2023.json
+
+      - name: Generate 2023
+        uses: yoshi389111/github-profile-3d-contrib@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2023
+          SETTING_JSON: /tmp/settings-2023.json
+
+      # 2022
+      - name: Write settings for 2022
+        run: |
+          echo '[{"type":"rainbow","fileName":"profile-3d-contrib/profile-2022-night-rainbow.svg","backgroundColor":"#00000f","foregroundColor":"#eeeeff","strongColor":"rgb(255,200,55)","weakColor":"#aaaaaa","radarColor":"rgb(255,200,55)","growingAnimation":true}]' > /tmp/settings-2022.json
+
+      - name: Generate 2022
+        uses: yoshi389111/github-profile-3d-contrib@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2022
+          SETTING_JSON: /tmp/settings-2022.json
+
       - name: Commit & Push
         run: |
-          git config user.email "action@github.com"
-          git config user.name "GitHub Action"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add -A .
-          git diff --staged --quiet || git commit -m "Generate 3D contribution graph"
+          git diff --staged --quiet || git commit -m "Generate 3D contribution graphs (all years)"
           git push
