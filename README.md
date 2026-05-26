@@ -1,26 +1,57 @@
-<h1 align="center">Hi 👋, I'm Galin Petrov</h1>
-<h3 align="center">A passionate student from Bulgaria</h3>
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=kolpic&label=Profile%20views&color=0e75b6&style=flat" alt="kolpic" /> </p>
+<div align="center">
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=kolpic" alt="kolpic" /></a> </p>
+# Galin Petrov
 
-- 🌱 I’m currently learning **Java and Spring**
+**Fullstack Developer · Web3 Engineer · Sofia, Bulgaria**
 
-- 📫 How to reach me **galincho112@gmail.com**
+[![Portfolio](https://img.shields.io/badge/Portfolio-portfolio.galin.pro-black?style=flat-square&logo=vercel&logoColor=white)](https://portfolio.galin.pro)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-galin--petrov-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/galin-petrov-53198b22b)
+[![Email](https://img.shields.io/badge/Email-galinnp@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:galinnp@gmail.com)
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/galin petrov" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="galin petrov" height="30" width="40" /></a>
-<a href="https://fb.com/galin petrov" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="galin petrov" height="30" width="40" /></a>
-<a href="https://instagram.com/kolpic_petr0v" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="kolpic_petr0v" height="30" width="40" /></a>
-<a href="https://discord.gg/Kolpic#8962" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Kolpic#8962" height="30" width="40" /></a>
-</p>
+</div>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://spring.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="40" height="40"/> </a> </p>
+---
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=kolpic&show_icons=true&locale=en&layout=compact" alt="kolpic" /></p>
+## About Me
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=kolpic&show_icons=true&locale=en" alt="kolpic" /></p>
+I'm a fullstack developer with 2+ years of professional experience building production-grade web applications and Web3 protocols. I've worked across the stack — from REST APIs and admin dashboards to non-custodial DeFi protocols and blockchain tooling on Hedera.
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=kolpic&" alt="kolpic" /></p>
+Currently a **Junior Fullstack Developer at LimeChain**, working on the Hedera ecosystem and DeFi infrastructure. Previously at **Telebid Pro**, where I grew from trainee to junior by shipping real features that reduced operational overhead and expanded platform capabilities.
+
+---
+
+## Tech Stack
+
+**Languages**
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+
+**Frameworks & Tools**
+
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
+![Foundry](https://img.shields.io/badge/Foundry-555555?style=flat-square)
+![HardHat](https://img.shields.io/badge/HardHat-F7DF1E?style=flat-square&logo=ethereum&logoColor=black)
+
+---
+
+## Contributions
+
+<div align="center">
+
+![3D Contributions 2026](./profile-3d-contrib/profile-night-green.svg)
+
+</div>
+
+
+---
+
+<div align="center">
+<sub>Open to interesting projects and collaborations — <a href="mailto:galinnp@gmail.com">galinnp@gmail.com</a></sub>
+</div>
