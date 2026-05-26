@@ -1,0 +1,55 @@
+name: Generate GitHub Stats SVGs
+
+on:
+  schedule:
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install github-readme-stats locally
+        run: |
+          npm install -g github-readme-stats 2>/dev/null || true
+          pip install requests --quiet
+
+      - name: Generate stat cards via API (with retries)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p github-stats
+
+          BASE="https://github-readme-stats.vercel.app/api"
+          THEME="theme=github_dark&hide_border=true"
+          USER="kolpic"
+
+          # Top languages — 6 langs, compact layout
+          curl -s --retry 5 --retry-delay 3 \
+            "${BASE}/top-langs/?username=${USER}&${THEME}&layout=compact&langs_count=6&count_private=true" \
+            -o github-stats/top-langs.svg
+
+          # General stats
+          curl -s --retry 5 --retry-delay 3 \
+            "${BASE}?username=${USER}&${THEME}&show_icons=true&count_private=true&include_all_commits=true" \
+            -o github-stats/stats.svg
+
+          # Streak stats (different service)
+          curl -s --retry 5 --retry-delay 3 \
+            "https://github-readme-streak-stats.herokuapp.com/?user=${USER}&theme=github-dark&hide_border=true" \
+            -o github-stats/streak.svg
+
+      - name: Commit & Push
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add github-stats/
+          git diff --staged --quiet || git commit -m "Update GitHub stats SVGs"
+          git push
